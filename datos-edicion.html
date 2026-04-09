@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos para Edición - XV Años Lía Miranda</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: linear-gradient(135deg, #1a0033 0%, #2d1052 100%); color: #e1d4f0; min-height: 100vh; padding: 2rem 1rem; }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { text-align: center; padding: 2rem 0 1.5rem; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #d946ef; margin-bottom: 0.25rem; }
+        .subtitle { color: #a78bfa; font-size: 0.9rem; }
+        .divider { width: 80px; height: 3px; background: linear-gradient(90deg, transparent, #d946ef, transparent); margin: 1rem auto; }
+        .nav-links { display: flex; justify-content: center; gap: 12px; margin: 1.5rem 0; flex-wrap: wrap; }
+        .nav-links a { background: rgba(217,70,239,0.15); color: #e1d4f0; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 0.85rem; border: 1px solid rgba(217,70,239,0.3); transition: all 0.3s; }
+        .nav-links a:hover { background: rgba(217,70,239,0.3); }
+        .datos-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(217,70,239,0.3); border-radius: 16px; padding: 28px 32px; margin-bottom: 24px; }
+        .datos-card pre { font-family: 'Montserrat', monospace; font-size: 0.88rem; color: #e1d4f0; white-space: pre-wrap; line-height: 2; margin: 0; }
+        .actions { text-align: center; margin: 20px 0; }
+        .btn-copy { display: inline-flex; align-items: center; gap: 8px; padding: 12px 30px; background: linear-gradient(135deg, #d946ef, #f472b6); color: white; border: none; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(217,70,239,0.4); }
+        .btn-copy:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(217,70,239,0.5); }
+        .btn-copy.copied { background: linear-gradient(135deg, #10b981, #059669); }
+        footer { text-align: center; padding: 2rem 0; color: #7c3aed; font-size: 0.85rem; border-top: 1px solid rgba(217,70,239,0.2); margin-top: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-film"></i> Datos para Edición de Video</h1>
+            <p class="subtitle">XV Años Lía Miranda</p>
+            <div class="divider"></div>
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Invitación</a>
+                <a href="contrato.html"><i class="fas fa-file-contract"></i> Contrato</a>
+                <a href="logistica.html"><i class="fas fa-clipboard-list"></i> Logística</a>
+                <a href="invitados.html"><i class="fas fa-users"></i> Invitados</a>
+            </div>
+        </header>
+
+        <div class="datos-card">
+            <pre id="datosTexto"></pre>
+        </div>
+
+        <div class="actions">
+            <button class="btn-copy" id="copyBtn" onclick="copiarDatos()">
+                <i class="fas fa-copy"></i> Copiar al portapapeles
+            </button>
+        </div>
+
+        <footer>
+            <p>Producciones Foro 7 &bull; <i class="fas fa-phone-alt"></i> 477-920-3776</p>
+        </footer>
+    </div>
+
+    <script>
+    const EVENTO_DATA = {
+        quinceañera: {
+            nombreCompleto: 'Lía Miranda Núñez Valdez'
+        },
+        padres: {
+            madre: 'Mayra Itzel Hernandez Martinez',
+            padre: 'José Juan Lozano Bárcenas'
+        },
+        padrinos: {
+            madrina: 'Claudia Ivette Hernandez Martinez',
+            padrino: 'Luis Manuel Garcia Chavez'
+        },
+        fechas: {
+            evento: '2026-06-20',
+            horaMisa: '13:00',
+            confirmacionLimite: '2026-06-01'
+        },
+        ubicaciones: {
+            iglesia: { nombre: 'Parroquia San Francisco de Asís', direccion: 'León, Gto.' },
+            salon:   { nombre: 'Salón Peñón de San Juan', direccion: 'San Juan 101, Villas de San Juan, León, Gto.' }
+        },
+        paquete: {
+            nombre: 'Paquete Completo',
+            total: '$7,000 MXN',
+            notas: '100 fotos impresas 5x7", película USB editada y musicalizada, videoclip, foto 50x60 cm con marco'
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const d = EVENTO_DATA;
+        const sep = '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
+
+        const fechaEvento = (() => {
+            const f = new Date(d.fechas.evento + 'T12:00:00');
+            const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+            const dias = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+            return `${dias[f.getDay()]} ${f.getDate()} de ${meses[f.getMonth()]} de ${f.getFullYear()}`;
+        })();
+
+        const texto = [
+            'DATOS PARA EDICIÓN DE VIDEO',
+            sep,
+            '',
+            `🎀 EVENTO: XV Años · ${fechaEvento}`,
+            '',
+            '👑 QUINCEAÑERA',
+            `   ${d.quinceañera.nombreCompleto}`,
+            '',
+            '👨‍👩‍👧 PADRES',
+            `   Mamá: ${d.padres.madre}`,
+            `   Papá: ${d.padres.padre}`,
+            '',
+            '🤝 PADRINOS DE HONOR',
+            `   Madrina: ${d.padrinos.madrina}`,
+            `   Padrino: ${d.padrinos.padrino}`,
+            '',
+            '📍 UBICACIONES',
+            `   Misa (${d.fechas.horaMisa} hrs): ${d.ubicaciones.iglesia.nombre}`,
+            `   ${d.ubicaciones.iglesia.direccion}`,
+            `   Recepción: ${d.ubicaciones.salon.nombre}`,
+            `   ${d.ubicaciones.salon.direccion}`,
+            '',
+            '📦 PAQUETE',
+            `   ${d.paquete.nombre} · ${d.paquete.total}`,
+            `   ${d.paquete.notas}`,
+            '',
+            sep,
+            'Foro 7 Producciones · 477-920-3776',
+        ].join('\n');
+
+        document.getElementById('datosTexto').textContent = texto;
+    });
+
+    function copiarDatos() {
+        const texto = document.getElementById('datosTexto').textContent;
+        navigator.clipboard.writeText(texto).then(() => {
+            const btn = document.getElementById('copyBtn');
+            btn.classList.add('copied');
+            btn.innerHTML = '<i class="fas fa-check"></i> ¡Copiado!';
+            setTimeout(() => {
+                btn.classList.remove('copied');
+                btn.innerHTML = '<i class="fas fa-copy"></i> Copiar al portapapeles';
+            }, 2500);
+        });
+    }
+    </script>
+    <script src="visitas.js?v=1"></script>
+    <script src="js/foro7-footer.js"></script>
+</body>
+</html>

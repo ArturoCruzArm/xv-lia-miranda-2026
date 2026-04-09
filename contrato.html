@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato - XV Años Lía Miranda | Foro 7</title>
+    <meta name="description" content="Contrato de servicios fotográficos y videográficos - XV Años Lía Miranda Núñez Valdez">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .print-header {
+            background-color: #1f2937;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .print-button {
+            background-color: #d946ef;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .print-button:hover {
+            background-color: #c026d3;
+        }
+
+        .print-info {
+            color: white;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .contract-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+        }
+
+        .contract-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #1f2937;
+            padding-bottom: 1rem;
+        }
+
+        .contract-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #1f2937;
+            letter-spacing: 0.05em;
+        }
+
+        .contract-company {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #374151;
+            margin-top: 0.25rem;
+        }
+
+        .contract-address {
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            color: #1f2937;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.25rem;
+        }
+
+        .section-number {
+            margin-right: 0.5rem;
+        }
+
+        .section-content {
+            margin-left: 0.5rem;
+        }
+
+        .section-content p {
+            margin-bottom: 0.4rem;
+        }
+
+        .section-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-content li {
+            margin-bottom: 0.25rem;
+        }
+
+        .section-content ol {
+            margin-left: 1.5rem;
+        }
+
+        .section-content ol li {
+            margin-bottom: 0.4rem;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #d1d5db;
+            margin: 1.5rem 0;
+        }
+
+        .package-box {
+            background-color: #fce7f3;
+            padding: 1rem;
+            border-left: 4px solid #d946ef;
+            margin: 0.75rem 0;
+        }
+
+        .costs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.75rem 0;
+        }
+
+        .costs-table td {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .costs-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .costs-table .row-discount td {
+            color: #059669;
+        }
+
+        .costs-table .row-total td {
+            background-color: #fef3c7;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        .costs-table .row-apartado td {
+            background-color: #f0fdf4;
+        }
+
+        .costs-table .row-saldo td {
+            background-color: #fef2f2;
+            font-weight: bold;
+        }
+
+        .signatures {
+            margin-top: 4rem;
+            display: flex;
+            gap: 4rem;
+        }
+
+        .signature-block {
+            flex: 1;
+        }
+
+        .signature-line {
+            margin-top: 3rem;
+            border-top: 2px solid #000;
+            padding-top: 0.5rem;
+        }
+
+        .text-justify {
+            text-align: justify;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            background: #d946ef;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95em;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            background: #c026d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(217, 70, 239, 0.3);
+        }
+
+        @media print {
+            .print-header {
+                display: none !important;
+            }
+
+            .nav-links {
+                display: none !important;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            .contract-container {
+                padding: 2rem;
+                box-shadow: none;
+            }
+
+            @page {
+                margin: 2cm;
+            }
+
+            .section {
+                break-inside: avoid;
+            }
+
+            .signatures {
+                page-break-before: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contract-container {
+                padding: 1.5rem;
+            }
+
+            .signatures {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #d946ef 0%, #f472b6 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            margin: 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .footer .company-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <div class="print-header">
+        <div class="nav-links">
+            <a href="index.html">Invitación</a>
+            <a href="contrato.html">Contrato</a>
+            <a href="logistica.html">Logística</a>
+            <a href="invitados.html">Invitados</a>
+        </div>
+        <button class="print-button" onclick="window.print()">
+            Descargar como PDF
+        </button>
+        <p class="print-info">
+            Haz clic y selecciona Guardar como PDF
+        </p>
+    </div>
+
+    <div class="contract-container">
+        <div class="contract-header">
+            <h1 class="contract-title">CONTRATO DE SERVICIOS</h1>
+            <p class="contract-company">Foro 7 Producciones — Fotografía y Video Profesional</p>
+            <p class="contract-address">Padilla 112, Cumbres de Arbide, León, Gto. &bull; Tel: 477 920 3776 &bull; foro7.invitados.org</p>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><span class="section-number">1.</span>DATOS DEL CLIENTE</h3>
+            <div class="section-content">
+                <p><span class="highlight">Nombre:</span> Mayra Itzel Hernandez Martinez</p>
+                <p><span class="highlight">Teléfono:</span> 477 501 4602</p>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <h3 class="section-title"><span class="section-number">2.</span>DATOS DEL EVENTO</h3>
+            <div class="section-content">
+                <p><span class="highlight">Tipo de evento:</span> XV Años</p>
+                <p><span class="highlight">Festejada:</span> Lía Miranda Núñez Valdez</p>
+                <p><span class="highlight">Fecha:</span> 13 de junio de 2026</p>
+                <p><span class="highlight">Hora de inicio:</span> 13:00 hrs</p>
+                <p><span class="highlight">Ceremonia:</span> San Francisco de Asís</p>
+                <p><span class="highlight">Recepción:</span> Salón Peñón de San Juan 101, Villas de San Juan</p>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <h3 class="section-title"><span class="section-number">3.</span>PAQUETE CONTRATADO: PAQUETE COMPLETO</h3>
+            <div class="section-content">
+                <p style="margin-bottom: 0.5rem;">El presente paquete incluye:</p>
+                <div class="package-box">
+                    <ul>
+                        <li>100 fotografías impresas en formato 5x7"</li>
+                        <li>Película en USB editada y musicalizada</li>
+                        <li>Videoclip para proyección en evento</li>
+                        <li>Fotografía ampliada 50x60 cm con marco</li>
+                        <li>Cobertura: 1 hora de ceremonia + 6 horas de fiesta</li>
+                        <li>Invitación digital web personalizada (xv-lia-miranda-2026.invitados.org)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <h3 class="section-title"><span class="section-number">4.</span>DESGLOSE DE COSTOS</h3>
+            <div class="section-content">
+                <table class="costs-table">
+                    <tr>
+                        <td>Paquete Completo</td>
+                        <td>$7,500 MXN</td>
+                    </tr>
+                    <tr class="row-discount">
+                        <td>Descuento</td>
+                        <td>-$500 MXN</td>
+                    </tr>
+                    <tr class="row-total">
+                        <td>COSTO TOTAL</td>
+                        <td>$7,000 MXN</td>
+                    </tr>
+                    <tr class="row-apartado">
+                        <td>Apartado recibido (efectivo)</td>
+                        <td>$1,000 MXN</td>
+                    </tr>
+                    <tr class="row-saldo">
+                        <td>SALDO RESTANTE</td>
+                        <td>$6,000 MXN</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <h3 class="section-title"><span class="section-number">5.</span>FORMA DE PAGO</h3>
+            <div class="section-content">
+                <p class="text-justify">
+                    El cliente ha entregado un apartado de <strong>$1,000 MXN</strong> en fecha <strong>3 de marzo de 2026</strong> mediante <strong>efectivo</strong>. El saldo restante de <strong>$6,000 MXN</strong> deberá liquidarse a más tardar el día del evento, antes del inicio de los servicios contratados.
+                </p>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <h3 class="section-title"><span class="section-number">6.</span>COMPROMISOS DE FORO 7 PRODUCCIONES</h3>
+            <div class="section-content">
+                <ol type="a">
+                    <li>Presentarse puntualmente en los lugares y horarios acordados con el equipo profesional necesario para la cobertura del evento.</li>
+                    <li>Entregar el material fotográfico y de video en un plazo no mayor a 60 días hábiles posteriores al evento.</li>
+                    <li>Garantizar la calidad profesional de todos los productos y servicios incluidos en el paquete contratado.</li>
+                    <li>Resguardar el material digital del evento por un periodo de 6 meses a partir de la fecha de entrega.</li>
+                </ol>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <h3 class="section-title"><span class="section-number">7.</span>COMPROMISOS DEL CLIENTE</h3>
+            <div class="section-content">
+                <ol type="a">
+                    <li>Liquidar el saldo restante en tiempo y forma según lo establecido en la cláusula de forma de pago.</li>
+                    <li>Informar con al menos 15 días de anticipación cualquier cambio en la fecha, hora o lugar del evento.</li>
+                    <li>En caso de cancelación, el monto del apartado no será reembolsable. Si la cancelación se realiza con menos de 7 días de anticipación, se cobrará el 50% del costo total.</li>
+                    <li>Facilitar el acceso y las condiciones necesarias para que el equipo de Foro 7 Producciones pueda realizar su trabajo adecuadamente.</li>
+                    <li>Recoger el material entregable en un plazo no mayor a 30 días después de ser notificado de su disponibilidad.</li>
+                </ol>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <p class="text-justify" style="margin-bottom: 2rem;">
+            Ambas partes manifiestan estar de acuerdo con los términos de este contrato y lo firman en la ciudad de León, Guanajuato, a <strong>3 de marzo de 2026</strong>.
+        </p>
+
+        <div class="signatures">
+            <div class="signature-block">
+                <p class="highlight">Foro 7 Producciones</p>
+                <div class="signature-line">
+                    <p style="font-weight: 600;">Juan Arturo Cruz Armenta</p>
+                    <p style="font-size: 0.875rem; color: #6b7280;">El prestador de servicios</p>
+                </div>
+            </div>
+
+            <div class="signature-block">
+                <p class="highlight">&nbsp;</p>
+                <div class="signature-line">
+                    <p style="font-weight: 600;">Mayra Itzel Hernandez Martinez</p>
+                    <p style="font-size: 0.875rem; color: #6b7280;">El cliente</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="company-name">Producciones Foro 7</p>
+        <p>Fotografía, Video e Invitaciones Web</p>
+        <p>WhatsApp: 477-920-3776</p>
+        <p>Email: foro7producciones@gmail.com</p>
+        <p>Padilla 112, Cumbres de Arbide, León, Gto.</p>
+    </div>
+    <script src="visitas.js?v=1"></script>
+    <script src="js/foro7-footer.js"></script>
+</body>
+</html>
